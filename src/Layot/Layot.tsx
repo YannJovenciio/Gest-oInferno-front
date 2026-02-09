@@ -1,25 +1,26 @@
 import { Box } from "@mui/material";
-import { LayotHeader } from "./LayotHeader";
 import { LayotFooter } from "./LayotFooter";
+import { LayotHeader } from "./LayotHeader";
 
 interface LayotProps {
-  children: React.ReactNode;
+  children?: React.ReactNode;
 }
 
 export const Layot: React.FC<LayotProps> = ({ children }) => {
   return (
-    <Box
-      sx={{
-        display: "flex",
-        flexDirection: "column",
-        minHeight: "100vh",
-        justifyContent: "left",
-      }}
-    >
-      <header>
-        <LayotHeader />
-      </header>
-      <main style={{ flex: "1%" }}>{children}</main>
+    <Box>
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "row",
+          minHeight: "100vh",
+          justifyContent: "left",
+        
+        }}
+      >
+        <LayotHeader></LayotHeader>
+        <main style={{ flex: "1%" }}>{children}</main>
+      </Box>
       <footer>
         <LayotFooter />
       </footer>

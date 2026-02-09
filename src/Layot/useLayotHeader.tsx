@@ -1,4 +1,11 @@
-import { FlameIcon, Ghost, Mountain, Network, Skull, UsersRound } from "lucide-react";
+import {
+  FlameIcon,
+  Ghost,
+  Mountain,
+  Network,
+  Skull,
+  UsersRound,
+} from "lucide-react";
 import { ButtonObject } from "../components/StyledButton/StyledButton";
 
 export const useLayotHeader = () => {
@@ -9,6 +16,7 @@ export const useLayotHeader = () => {
       clickHandler: (event: any) => {
         console.log("DashBoard clicado");
       },
+      to: "/",
     },
     {
       text: "Pessoas",
@@ -16,6 +24,7 @@ export const useLayotHeader = () => {
       clickHandler: (event: any) => {
         console.log("Pessoas clicado");
       },
+      to: "/people",
     },
     {
       text: "Demonios",
@@ -23,6 +32,7 @@ export const useLayotHeader = () => {
       clickHandler: (event: any) => {
         console.log("Demonios clicado");
       },
+      to: "/demons",
     },
     {
       text: "Cavernas",
@@ -30,6 +40,7 @@ export const useLayotHeader = () => {
       clickHandler: (event: any) => {
         console.log("Cavernas clicado");
       },
+      to: "/caverns",
     },
     {
       text: "Almas",
@@ -37,6 +48,7 @@ export const useLayotHeader = () => {
       clickHandler: (event: any) => {
         console.log("Almas clicado");
       },
+      to: "/souls",
     },
     {
       text: "Relacionamentos",
@@ -44,6 +56,7 @@ export const useLayotHeader = () => {
       clickHandler: (event: any) => {
         console.log("Relacionamentos clicado");
       },
+      to: "/relationships",
     },
   ];
 

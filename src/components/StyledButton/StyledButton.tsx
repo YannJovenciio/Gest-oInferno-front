@@ -1,10 +1,12 @@
-import { Box, Button, createTheme, ThemeProvider } from "@mui/material";
-import { MouseEventHandler, ReactNode } from "react";
+import { Box, createTheme, ThemeProvider } from "@mui/material";
+import { MouseEventHandler, ReactNode, useState } from "react";
 import "./StyledLayot.css";
+import { Link } from "react-router-dom";
 export interface ButtonObject {
   icon?: ReactNode;
   text: string;
-  clickHandler: MouseEventHandler;
+  clickHandler: MouseEventHandler<HTMLElement>;
+  to: string;
 }
 
 interface StyledButtonProps {
@@ -27,27 +29,47 @@ export const StyledButton: React.FC<StyledButtonProps> = ({ Buttons }) => {
       ].join(","),
     },
   });
+  const handleClick = (
+    idx: number,
+    clickHandler: (event: React.MouseEvent<HTMLElement>) => void,
+    e: React.MouseEvent<HTMLElement>
+  ) => {
+    clickHandler(e);
+  };
+
   return (
     <>
       <ThemeProvider theme={theme}>
-        <Box>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            gap: "20px",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
           {Buttons &&
             Buttons.map((button, idx) => (
-              <Box sx={{ display: "flex", paddingLeft: "12%", gap: "22px" }}>
+              <Box
+                key={`${button.text}-${idx}`}
+                sx={{ display: "flex", gap: "12px", alignItems: "center" }}
+              >
                 <div className="button">
                   {button.icon}
 
-                  <Button
-                    key={`${button.text}-${idx}`}
-                    onClick={button.clickHandler}
-                    sx={{
+                  <Link
+                    to={button.to}
+                    onClick={(e) => handleClick(idx, button.clickHandler, e)}
+                    style={{
                       fontFamily: "Helvetica Neue",
                       color: theme.palette.grey[600],
                       fontWeight: theme.typography.fontWeightMedium,
+                      textDecoration: "none",
                     }}
                   >
                     {button.text}
-                  </Button>
+                  </Link>
                 </div>
               </Box>
             ))}
