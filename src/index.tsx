@@ -5,6 +5,9 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { ThemeProvider } from "@mui/material/styles";
+import CssBaseline from "@mui/material/CssBaseline";
+import { infernoTheme } from "./Theme/theme";
 
 const queryClient = new QueryClient();
 
@@ -15,9 +18,12 @@ const root = ReactDOM.createRoot(
 root.render(
   <BrowserRouter>
     <QueryClientProvider client={queryClient}>
-      <React.StrictMode>
-        <App />
-      </React.StrictMode>
+      <ThemeProvider theme={infernoTheme}>
+        <CssBaseline />
+        <React.StrictMode>
+          <App />
+        </React.StrictMode>
+      </ThemeProvider>
     </QueryClientProvider>
   </BrowserRouter>,
 );

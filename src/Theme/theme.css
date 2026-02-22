@@ -1,0 +1,149 @@
+/* 🔥 Inferno Theme - CSS Variables */
+
+:root {
+  /* Cores Primárias - Vermelho Infernal */
+  --color-primary: #d32f2f;
+  --color-primary-light: #ff6e40;
+  --color-primary-dark: #7d0000;
+
+  /* Cores Secundárias - Ouro Demoníaco */
+  --color-secondary: #ffd700;
+  --color-secondary-light: #ffed4e;
+  --color-secondary-dark: #b8860b;
+
+  /* Cores Neutras */
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-dark-gray: #0a0a0a;
+  --color-medium-gray: #1a1a1a;
+  --color-light-gray: #b0bec5;
+
+  /* Cores de Status */
+  --color-error: #f44336;
+  --color-warning: #ff9800;
+  --color-info: #2196f3;
+  --color-success: #4caf50;
+
+  /* Cores de Suporte */
+  --color-border: #424242;
+  --color-disabled: #757575;
+
+  /* Tipografia */
+  --font-heading: "Playfair Display", serif;
+  --font-body: "Merriweather", serif;
+  --font-default:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial,
+    sans-serif;
+
+  /* Shadows */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 20px rgba(211, 47, 47, 0.3);
+  --shadow-lg: 0 6px 30px rgba(211, 47, 47, 0.5);
+
+  /* Spacing */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+
+  /* Border Radius */
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 8px;
+  --radius-full: 9999px;
+
+  /* Transitions */
+  --transition-fast: 150ms ease-in-out;
+  --transition-base: 300ms ease-in-out;
+  --transition-slow: 500ms ease-in-out;
+}
+
+/* Aplicar tema ao body */
+body {
+  background-color: var(--color-dark-gray);
+  color: var(--color-white);
+  font-family: var(--font-body);
+  transition:
+    background-color var(--transition-base),
+    color var(--transition-base);
+}
+
+/* Headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  color: var(--color-white);
+}
+
+/* Links */
+a {
+  color: var(--color-primary);
+  transition: color var(--transition-base);
+}
+
+a:hover {
+  color: var(--color-primary-light);
+}
+
+/* Utility Classes */
+.text-primary {
+  color: var(--color-primary);
+}
+
+.text-secondary {
+  color: var(--color-secondary);
+}
+
+.text-white {
+  color: var(--color-white);
+}
+
+.text-light-gray {
+  color: var(--color-light-gray);
+}
+
+.bg-primary {
+  background-color: var(--color-primary);
+}
+
+.bg-secondary {
+  background-color: var(--color-secondary);
+}
+
+.bg-dark {
+  background-color: var(--color-dark-gray);
+}
+
+.bg-medium-gray {
+  background-color: var(--color-medium-gray);
+}
+
+.border-primary {
+  border-color: var(--color-primary);
+}
+
+.border-secondary {
+  border-color: var(--color-secondary);
+}
+
+.border-light {
+  border-color: var(--color-border);
+}
+
+/* Shadow Utilities */
+.shadow-sm {
+  box-shadow: var(--shadow-sm);
+}
+
+.shadow-md {
+  box-shadow: var(--shadow-md);
+}
+
+.shadow-lg {
+  box-shadow: var(--shadow-lg);
+}

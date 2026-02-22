@@ -37,7 +37,7 @@ export const LayotHeader = () => {
             color: "rgba(186, 84, 49, 1)",
           }}
         >
-          <Typography variant="h6">Sistema de Gestão do inferno</Typography>
+          <Typography variant="h6">Hell System Manager</Typography>
         </Box>
       </Box>
 
