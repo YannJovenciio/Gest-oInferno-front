@@ -14,9 +14,8 @@ import SignOutIcon from "@mui/icons-material/ExitToApp";
 import { useLayotHeader } from "../Layot/useLayotHeader";
 import { Link } from "react-router-dom";
 
-const { buttons } = useLayotHeader();
-
 const Sidebar: React.FC = () => {
+  const { buttons } = useLayotHeader();
   return (
     <Box
       sx={{
@@ -51,7 +50,6 @@ const Sidebar: React.FC = () => {
         </Box>
       </Box>
 
-      {/* Navigation */}
       <List disablePadding sx={{ flex: 1 }}>
         {buttons.map((item) => (
           <ListItemButton
@@ -69,40 +67,25 @@ const Sidebar: React.FC = () => {
             >
               {item.icon}
             </ListItemIcon>
-            <ListItemText
-              primary={item.label}
- 
-            />
+            <ListItemText primary={item.label} />
           </ListItemButton>
         ))}
-        
-        
-        
-        
-        
       </List>
 
       <Divider sx={{ my: 1 }} />
 
-      {/* Bottom items */}
       <List disablePadding>
         <ListItemButton sx={{ py: 1, px: 1.5 }}>
           <ListItemIcon sx={{ minWidth: 32 }}>
             <SettingsIcon fontSize="small" />
           </ListItemIcon>
-          <ListItemText
-            primary="Preferences"
-     
-          />
+          <ListItemText primary="Preferences" />
         </ListItemButton>
         <ListItemButton sx={{ py: 1, px: 1.5 }}>
           <ListItemIcon sx={{ minWidth: 32 }}>
             <SignOutIcon fontSize="small" />
           </ListItemIcon>
-          <ListItemText
-            primary="Sign out"
-      
-          />
+          <ListItemText primary="Sign out" />
         </ListItemButton>
       </List>
     </Box>

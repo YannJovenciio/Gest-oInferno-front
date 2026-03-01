@@ -1,6 +1,5 @@
 import { FormProvider, useForm } from "react-hook-form";
 import "./App.css";
-import { Layot } from "./Layot/Layot";
 import { Router } from "./Router/Router";
 import { theme } from "./Theme/theme";
 import { ThemeProvider } from "@emotion/react";

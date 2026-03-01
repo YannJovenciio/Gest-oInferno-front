@@ -1,5 +1,12 @@
 import React from "react";
-import { Box, Typography, InputBase, IconButton, Grid } from "@mui/material";
+import {
+  Box,
+  Typography,
+  InputBase,
+  IconButton,
+  Grid,
+  useTheme,
+} from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import NotificationsIcon from "@mui/icons-material/NotificationsNoneOutlined";
 import EmailIcon from "@mui/icons-material/MailOutline";
@@ -68,9 +75,9 @@ const tasks: Task[] = [
 ];
 
 const Dashboard: React.FC = () => {
+  const theme = useTheme();
   return (
     <Box sx={{ flex: 1, p: 3, overflow: "auto", backgroundColor: "#EBEBEB" }}>
-      {/* Header */}
       <Box
         sx={{
           display: "flex",
@@ -79,10 +86,9 @@ const Dashboard: React.FC = () => {
           mb: 3,
         }}
       >
-        <Typography variant="h4">Dashboard</Typography>
+        <Typography variant="h4" color={theme.palette.text.primary}>Dashboard</Typography>
 
         <Box sx={{ display: "flex", alignItems: "center", gap: 1.5 }}>
-          {/* Search */}
           <Box
             sx={{
               display: "flex",
@@ -101,7 +107,6 @@ const Dashboard: React.FC = () => {
               sx={{ fontSize: "0.85rem" }}
             />
           </Box>
-          {/* Icons */}
           <IconButton size="small">
             <NotificationsIcon />
           </IconButton>
@@ -114,7 +119,6 @@ const Dashboard: React.FC = () => {
         </Box>
       </Box>
 
-      {/* Task Cards Grid */}
       <Grid container spacing={2} sx={{ mb: 3 }}>
         {tasks.map((task) => (
           <Grid key={task.id}>
@@ -122,8 +126,6 @@ const Dashboard: React.FC = () => {
           </Grid>
         ))}
       </Grid>
-
-      {/* Calendar */}
       <DemonCalendar />
     </Box>
   );
