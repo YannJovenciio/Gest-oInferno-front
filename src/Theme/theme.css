@@ -1,8 +1,10 @@
 /* 🔥 Inferno Theme - CSS Variables */
 
 :root {
+  /* Cores Primárias - Background */
+  --color-main-bg: #DBD8E3;
   /* Cores Primárias - Vermelho Infernal */
-  --color-primary: #d32f2f;
+  --color-primary: #000000b6;
   --color-primary-light: #ff6e40;
   --color-primary-dark: #7d0000;
 
@@ -61,7 +63,7 @@
 
 /* Aplicar tema ao body */
 body {
-  background-color: var(--color-dark-gray);
+  background-color: var(--color-main-bg);
   color: var(--color-white);
   font-family: var(--font-body);
   transition:

@@ -1,209 +1,99 @@
 import { createTheme } from "@mui/material/styles";
 
-export const infernoTheme = createTheme({
+export const theme = createTheme({
   palette: {
+    mode: "light",
     primary: {
-      main: "#d32f2f", // Vermelho Infernal
-      light: "#ff6e40", // Laranja Queimado
-      dark: "#7d0000", // Vermelho Escuro
-      contrastText: "#ffffff",
+      main: "#4CAF50",
+      light: "#81C784",
+      dark: "#388E3C",
+      contrastText: "#fff",
     },
     secondary: {
-      main: "#ffd700", // Ouro Demoníaco
-      light: "#ffed4e", // Ouro Claro
-      dark: "#b8860b", // Ouro Escuro
-      contrastText: "#000000",
+      main: "#616161",
+      light: "#9E9E9E",
+      dark: "#212121",
+      contrastText: "#fff",
     },
     background: {
-      default: "#0a0a0a", // Preto Profundo
-      paper: "#1a1a1a", // Cinza Muito Escuro
+      default: "#EBEBEB",
+      paper: "#F5F5F5",
     },
     text: {
-      primary: "#ffffff", // Branco Principal
-      secondary: "#b0bec5", // Cinza Claro
-      disabled: "#757575", // Cinza Médio
-    },
-    divider: "#424242",
-    error: {
-      main: "#f44336",
-      light: "#e57373",
-      dark: "#c62828",
-    },
-    warning: {
-      main: "#ff9800",
-      light: "#ffb74d",
-      dark: "#e65100",
-    },
-    info: {
-      main: "#2196f3",
-      light: "#64b5f6",
-      dark: "#1565c0",
+      primary: "#212121",
+      secondary: "#757575",
     },
     success: {
-      main: "#4caf50",
-      light: "#81c784",
-      dark: "#2e7d32",
+      main: "#4CAF50",
     },
+    divider: "#E0E0E0",
   },
   typography: {
-    fontFamily: [
-      "Merriweather",
-      "Playfair Display",
-      '"Helvetica Neue"',
-      "Arial",
-      "sans-serif",
-    ].join(","),
-    h1: {
-      fontFamily: "Playfair Display, serif",
-      fontWeight: 700,
-      fontSize: "3rem",
-      letterSpacing: "-1px",
-    },
-    h2: {
-      fontFamily: "Playfair Display, serif",
-      fontWeight: 700,
-      fontSize: "2.5rem",
-    },
-    h3: {
-      fontFamily: "Playfair Display, serif",
-      fontWeight: 600,
-      fontSize: "2rem",
-    },
+    fontFamily: '"DM Sans", "Helvetica Neue", Arial, sans-serif',
     h4: {
-      fontFamily: "Playfair Display, serif",
-      fontWeight: 600,
-      fontSize: "1.5rem",
-    },
-    h5: {
-      fontFamily: "Playfair Display, serif",
-      fontWeight: 500,
-      fontSize: "1.25rem",
+      fontWeight: 700,
+      fontSize: "1.75rem",
     },
     h6: {
-      fontFamily: "Playfair Display, serif",
-      fontWeight: 500,
-      fontSize: "1rem",
-    },
-    body1: {
-      fontFamily: "Merriweather, serif",
-      fontSize: "1rem",
-      lineHeight: 1.6,
+      fontWeight: 600,
     },
     body2: {
-      fontFamily: "Merriweather, serif",
-      fontSize: "0.875rem",
-      lineHeight: 1.5,
+      fontSize: "0.8rem",
     },
-    button: {
-      fontFamily: "Playfair Display, serif",
-      fontWeight: 600,
-      letterSpacing: "0.5px",
+    caption: {
+      fontSize: "0.72rem",
     },
   },
+  shape: {
+    borderRadius: 12,
+  },
   components: {
+    MuiCard: {
+      styleOverrides: {
+        root: {
+          boxShadow: "none",
+          border: "1px solid #E0E0E0",
+          backgroundColor: "#FFFFFF",
+        },
+      },
+    },
     MuiButton: {
       styleOverrides: {
         root: {
-          borderRadius: "8px",
-          padding: "10px 24px",
-          fontSize: "0.95rem",
-          transition: "all 0.3s ease",
           textTransform: "none",
           fontWeight: 600,
+          borderRadius: 8,
         },
-        contained: {
-          boxShadow: "0 4px 20px 0 rgba(211, 47, 47, 0.3)",
-          ":hover": {
-            boxShadow: "0 6px 30px 0 rgba(211, 47, 47, 0.5)",
+        containedPrimary: {
+          backgroundColor: "#4CAF50",
+          "&:hover": {
+            backgroundColor: "#388E3C",
           },
         },
       },
     },
-    MuiTextField: {
+    MuiLinearProgress: {
       styleOverrides: {
         root: {
-          "& .MuiOutlinedInput-root": {
-            color: "#ffffff",
-            "& fieldset": {
-              borderColor: "#424242",
-            },
-            ":hover fieldset": {
-              borderColor: "#d32f2f",
-            },
-            ":focus-within fieldset": {
-              borderColor: "#d32f2f",
-            },
-          },
-          "& .MuiInputBase-input::placeholder": {
-            color: "#757575",
-            opacity: 1,
-          },
+          borderRadius: 4,
+          backgroundColor: "#E0E0E0",
+          height: 6,
+        },
+        bar: {
+          borderRadius: 4,
         },
       },
     },
-    MuiPaper: {
+    MuiListItemButton: {
       styleOverrides: {
         root: {
-          backgroundImage: "none",
-          backgroundColor: "#1a1a1a",
-          borderColor: "#424242",
-        },
-      },
-    },
-    MuiAppBar: {
-      styleOverrides: {
-        root: {
-          backgroundImage: "none",
-          backgroundColor: "#000000",
-          boxShadow: "0 4px 20px 0 rgba(211, 47, 47, 0.2)",
-        },
-      },
-    },
-    MuiAutocomplete: {
-      styleOverrides: {
-        paper: {
-          backgroundColor: "#1a1a1a",
-          backgroundImage: "none",
-        },
-        option: {
-          "&[aria-selected='true']": {
-            backgroundColor: "rgba(211, 47, 47, 0.5) !important",
-          },
-          ":hover": {
-            backgroundColor: "rgba(211, 47, 47, 0.3) !important",
+          borderRadius: 8,
+          "&.Mui-selected": {
+            backgroundColor: "#FFFFFF",
+            fontWeight: 700,
           },
         },
       },
     },
   },
 });
-
-// Paleta de cores adicionais para uso direto
-export const colors = {
-  // Principais (Inferno)
-  primary: "#d32f2f",
-  primaryLight: "#ff6e40",
-  primaryDark: "#7d0000",
-
-  // Secundárias (Ouro)
-  secondary: "#ffd700",
-  secondaryLight: "#ffed4e",
-  secondaryDark: "#b8860b",
-
-  // Neutros
-  white: "#ffffff",
-  black: "#000000",
-  darkGray: "#0a0a0a",
-  mediumGray: "#1a1a1a",
-  lightGray: "#b0bec5",
-
-  // Accentos
-  error: "#f44336",
-  warning: "#ff9800",
-  info: "#2196f3",
-  success: "#4caf50",
-
-  // Dividers e Borders
-  border: "#424242",
-  disabled: "#757575",
-};

@@ -127,7 +127,7 @@ export const DemonList = () => {
           />
         </Box>
       </Box>
-      <InputForm fields={fields}></InputForm>
+      <InputForm fields={fields}/>
     </Box>
   );
 };
