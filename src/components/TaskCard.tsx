@@ -35,7 +35,6 @@ const TaskCard: React.FC<TaskCardProps> = ({ task }) => {
         sx={{
           width: 100,
           flexShrink: 0,
-          backgroundImage: `url(${task.image})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           filter: "grayscale(100%)",

@@ -1,5 +1,5 @@
 import { FetchApi } from "../../Utils/FetchApi";
-import { DemonAnalytics, response } from "../../Models/DemonAnalytics";
+import { DemonAnalytics } from "../../Models/DemonAnalytics";
 import { useQuery } from "@tanstack/react-query";
 
 const fetchData = async (pageSize: number, pageNumber: number) => {
@@ -12,7 +12,7 @@ export const useGetDemonsAnalytics = (
   pageSize: number | undefined,
   pageNumber: number,
 ) => {
-  const { data, isLoading, ...rest } = useQuery<response>({
+  const { data, isLoading, ...rest } = useQuery<DemonAnalytics[]>({
     queryKey: ["Demon", "Analytics", pageNumber, pageSize],
     queryFn: async () => fetchData(pageSize ?? 10, pageNumber),
   });

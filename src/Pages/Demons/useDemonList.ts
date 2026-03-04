@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { useGetDemons } from "./useGetDemons";
 import { useGetDemonsAnalytics } from "./useGetDemonsAnalytics";
-import { useDemonTableData } from "../../Hooks/useDemonTableData/useDemonTableData";
 import { FormFields } from "../../Models/FormFields";
+import { useDemonTableData } from "../../hooks/useDemonTableData/useDemonTableData";
 
 export const useDemonList = () => {
   const [pageNumber, setPageNumber] = useState<number>(1);
@@ -22,7 +22,7 @@ export const useDemonList = () => {
   } = useGetDemonsAnalytics(pageSize, pageNumber);
 
   const { orderedDemons } = useDemonTableData({
-    DemonAnalytics: DemonsAnalyticsList?.recommendations ?? [],
+    DemonAnalytics: DemonsAnalyticsList ?? [],
     Demons: DemonsList ?? [],
   });
 

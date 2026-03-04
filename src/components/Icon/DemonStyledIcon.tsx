@@ -15,9 +15,10 @@ export const DemonStyledIcon = () => {
       }}
     >
       <img
+        alt="A demon"
         style={{ width: "100%", height: "100%" }}
         src="/assets/DemonStyledIcon.png"
-      ></img>
+      />
     </Box>
   );
 };

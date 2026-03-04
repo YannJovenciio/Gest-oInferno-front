@@ -28,6 +28,14 @@ export const DemonList = () => {
   } = useDemonList();
   const theme = useTheme();
 
+  if (!DemonsAnalyticsList) {
+    return (
+      <>
+        <Typography>Nenhum demon encontrado...</Typography>
+      </>
+    );
+  }
+
   if (isLoadingDemons || isLoadingAnalytics) {
     return (
       <>
@@ -63,8 +71,7 @@ export const DemonList = () => {
             alignItems: "center",
           }}
         >
-          <Box sx={{display:"flex",flexDirection:"column"}}>
-            
+          <Box sx={{ display: "flex", flexDirection: "column" }}>
             <Typography
               variant="h4"
               sx={{ textAlign: "left", fontFamily: "Playfair Display, serif" }}
@@ -108,7 +115,7 @@ export const DemonList = () => {
             <TextField {...params} label="Enter demon name to search" />
           )}
           options={
-            DemonsAnalyticsList?.recommendations.map(
+            DemonsAnalyticsList.map(
               (Demon) => Demon.demonName,
             ) ?? []
           }
@@ -123,11 +130,11 @@ export const DemonList = () => {
             pageSize={pageSize}
             pageNumber={pageNumber}
             onPageChange={(newPage) => setPageNumber(newPage)}
-            totalItems={DemonsAnalyticsList?.totalItems ?? 10}
+            totalItems={DemonsAnalyticsList.length}
           />
         </Box>
       </Box>
-      <InputForm fields={fields}/>
+      <InputForm fields={fields} />
     </Box>
   );
 };
