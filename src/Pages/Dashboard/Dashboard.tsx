@@ -12,9 +12,9 @@ import NotificationsIcon from "@mui/icons-material/NotificationsNoneOutlined";
 import EmailIcon from "@mui/icons-material/MailOutline";
 import ChatIcon from "@mui/icons-material/ChatBubbleOutline";
 
-import DemonCalendar from "../components/DemonCalendar";
-import TaskCard from "../components/TaskCard";
-import { useGetHellTasks } from "../Api/useGetHellTasks";
+import DemonCalendar from "../../components/DemonCalendar";
+import TaskCard from "../../components/TaskCard";
+import { useGetHellTasks } from "../../Api/useGetHellTasks";
 
 const Dashboard: React.FC = () => {
   const theme = useTheme();

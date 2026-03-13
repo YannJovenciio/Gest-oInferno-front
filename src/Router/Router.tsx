@@ -2,7 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import { Suspense } from "react";
 import { ListCavern } from "../Pages/Caverns/ListCavern";
 import { DemonList } from "../Pages/Demons/DemonList";
-import Dashboard from "../Pages/Dashboard";
+import Dashboard from "../Pages/Dashboard/Dashboard";
 
 export const Router = () => {
   return (
