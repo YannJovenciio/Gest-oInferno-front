@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { useGetDemons } from "./useGetDemons";
+import { useGetDemons } from "../../Api/useGetDemons";
 import { useGetDemonsAnalytics } from "./useGetDemonsAnalytics";
 import { FormFields } from "../../Models/FormFields";
-import { useDemonTableData } from "../../hooks/useDemonTableData/useDemonTableData";
+import { useDemonTableData } from "../../Hooks/useDemonTableData/useDemonTableData";
 
 export const useDemonList = () => {
   const [pageNumber, setPageNumber] = useState<number>(1);

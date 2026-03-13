@@ -1,15 +1,14 @@
 export interface Task {
   id: number;
   title: string;
-  description: string;
-  deadline: string;
-  formType: string;
-  entries: number;
-  progress: number;
-  formIndex: number;
-  totalForms: number;
-  status?: "Awaiting" | "Confirmed" | "Submit" | "Review";
-  image: string;
+  description: string;  
+  createdAt: string;
+  deadline: string;  
+  status: HellTaskStatus;
+  progress: number;  
+  priority :HellTaskPriority;
+  updatedAt: string; 
+  completedAt: string;
 }
 
 export interface ReportItem {

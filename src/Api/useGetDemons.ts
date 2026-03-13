@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
-import { FetchApi } from "../../Utils/FetchApi";
-import { Demon } from "../../Models/Demon";
+import { FetchApi } from "../Utils/FetchApi";
+import { Demon } from "../Models/Demon";
 
 const fetchData = async (pageNumber: number, pageSize: number) => {
   const response = await FetchApi().get("Demon", {

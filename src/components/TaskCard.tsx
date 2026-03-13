@@ -8,6 +8,8 @@ import {
   Chip,
 } from "@mui/material";
 import { Task } from "../types";
+import { HellTaskStatus } from "../types/Enum/HellTaskStatus";
+import { formatFullDate } from "../types/Helpers/DateUtils";
 
 interface TaskCardProps {
   task: Task;
@@ -62,7 +64,7 @@ const TaskCard: React.FC<TaskCardProps> = ({ task }) => {
                 height: 20,
                 fontSize: "0.65rem",
                 fontWeight: 600,
-                ...(task.status === "Submit" && {
+                ...(task.status === HellTaskStatus.Submit && {
                   backgroundColor: "#212121",
                   color: "#fff",
                 }),
@@ -73,16 +75,8 @@ const TaskCard: React.FC<TaskCardProps> = ({ task }) => {
         <Typography variant="caption" color="text.secondary">
           {task.description}
         </Typography>
-        <Typography
-          variant="caption"
-          display="block"
-          color="text.secondary"
-          sx={{ mt: 0.3 }}
-        >
-          {task.deadline}
-        </Typography>
         <Typography variant="caption" display="block" color="text.secondary">
-          {task.entries} entries
+          {task.priority} priority
         </Typography>
         <LinearProgress
           variant="determinate"
@@ -90,14 +84,16 @@ const TaskCard: React.FC<TaskCardProps> = ({ task }) => {
           sx={{ mt: 1, mb: 0.5 }}
           color="primary"
         />
-        <Box sx={{ display: "flex", justifyContent: "space-between" }}>
+        <Box sx={{ display: "flex", justifyContent: "space-between",flexDirection:"column" }}>
           <Typography variant="caption" color="text.secondary">
-            Form {task.formIndex}/{task.totalForms}
+            createdAt:{formatFullDate(task.createdAt)}
+          </Typography>        <Typography variant="caption" color="text.secondary">
+            deadline:{formatFullDate(task.deadline)}
           </Typography>
-          <Typography variant="caption" color="text.secondary">
+
+        </Box>          <Typography variant="caption" color="text.secondary">
             {task.progress}% completed
           </Typography>
-        </Box>
       </CardContent>
     </Card>
   );
